@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.example.demo.entity.test.Child;
+import com.example.demo.entity.test.Parent;
 import com.example.demo.repository.ChildRepository;
 import com.example.demo.repository.ParentRepository;
 import org.junit.jupiter.api.BeforeEach;

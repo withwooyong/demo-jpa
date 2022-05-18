@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Child;
-import com.example.demo.entity.Department;
+import com.example.demo.entity.test.Child;
+import com.example.demo.entity.test.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

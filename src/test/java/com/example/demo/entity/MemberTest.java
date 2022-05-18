@@ -1,5 +1,8 @@
 package com.example.demo.entity;
 
+import com.example.demo.entity.test.Department;
+import com.example.demo.entity.test.Employee;
+import com.example.demo.entity.test.Member;
 import com.example.demo.repository.DepartmentRepository;
 import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.repository.MemberRepository;
@@ -7,6 +10,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @DataJpaTest
 class MemberTest {
@@ -20,8 +26,16 @@ class MemberTest {
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @PersistenceContext
+    EntityManager em;
+
     @BeforeEach
     void setUp() {
+    }
+
+    @Test
+    void userTest() {
+        
     }
 
     @Test
