@@ -130,9 +130,11 @@ public class StreamTest {
         }
         System.out.println();
         // 8버전 (stream 이용)
+        // noneMatch => 불일치 데이터 필터링
+        // anyMatch => 일치 데이터 필터링
+        // allMatch => 모두 일치하는 데이터 필터링
         List<String> result2 = list1.stream()
-                .filter(str -> list2.stream()
-                        .anyMatch(Predicate.isEqual(str)))
+                .filter(str -> list2.stream().anyMatch(Predicate.isEqual(str)))
                 .collect(Collectors.toList());
         result2.stream().forEach(System.out::print);
         System.out.println();
