@@ -1,7 +1,7 @@
 package com.example.demo.test;
 
-import com.example.demo.entity.test.Item;
-import com.example.demo.entity.test.Modem;
+import com.example.demo.dto.test.Item;
+import com.example.demo.dto.test.Modem;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;

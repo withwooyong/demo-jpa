@@ -1,5 +1,7 @@
-package com.example.demo.enums.test;
+package com.example.demo.test;
 
+import com.example.demo.enums.test.EnumMapperValue;
+import com.example.demo.enums.test.FeeType;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

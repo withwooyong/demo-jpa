@@ -35,7 +35,7 @@ class MemberTest {
 
     @Test
     void userTest() {
-        
+
     }
 
     @Test
@@ -51,7 +51,6 @@ class MemberTest {
         //수정
         result = memberRepository.findById(result.getId()).orElseThrow();
         result.updateUserName("test");
-        result.setUser();
         System.out.println("findById=" + result);
         // 삭제
         memberRepository.delete(result);

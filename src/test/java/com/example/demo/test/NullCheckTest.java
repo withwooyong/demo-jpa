@@ -1,6 +1,10 @@
 package com.example.demo.test;
 
-import com.example.demo.entity.test.*;
+import com.example.demo.dto.test.Item;
+import com.example.demo.dto.test.YndDTO;
+import com.example.demo.dto.test.YndOrderBankVO;
+import com.example.demo.dto.test.YndOrderParamVO;
+import com.example.demo.dto.test.YndOrderUserVO;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
 

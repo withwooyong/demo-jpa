@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Slf4j
 @Getter
+@Setter
 @ToString
 @NoArgsConstructor
 public class CartItem {
@@ -32,7 +33,6 @@ public class CartItem {
     private Integer sortOrder;
     private LocalDateTime registDate;
     private LocalDateTime updateDate;
-    @Setter
     @JsonIgnore
     private String orderNo;
 

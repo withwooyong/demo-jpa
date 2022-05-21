@@ -1,0 +1,468 @@
+comment:
+  notExist: 댓글 정보가 존재하지 않습니다.
+  deletedComment: 삭제된 댓글입니다.
+  notPermitted: 권한이 없습니다.
+  expiredMission:
+    create: 참여 기한이 지난 미션에는 댓글을 작성할 수 없습니다.
+    update: 참여 기한이 지난 미션의 댓글은 수정할 수 없습니다.
+    delete: 참여 기한이 지난 미션의 댓글은 삭제할 수 없습니다.
+
+mission:
+  notExist: 미션 정보가 존재하지 않습니다.
+userMission:
+  notExist: 미션 정보가 존재하지 않습니다.
+
+curriculum:
+  asset:
+    media:
+      notExist: 강의 정보가 존재하지 않습니다.
+
+feed:
+  curriculum:
+    ownerName: 오늘의 학습목표
+
+study:
+  status:
+    not-running: "현재 수강중인 클래스가 아닙니다."
+
+exception:
+  common:
+    code: "500"
+    msg: 오류가 발생했습니다.
+  signIn:
+    loginFail:
+      code: "4001"
+      msg: "로그인에 실패했습니다."
+    noUserInfo:
+      code: "4002"
+      msg: "사용자 정보가 존재하지 않습니다."
+    noUserInfoSns:
+      code: "4022"
+      msg: "사용자 정보가 존재하지 않습니다."
+    noUserRole:
+      code: "4003"
+      msg: "사용자 권한이 존재하지 않습니다."
+    withdrawal:
+      code: "4004"
+      msg: "탈퇴한 회원입니다."
+    withdrawalSns:
+      code: "4021"
+      msg: "탈퇴한 회원입니다."
+    wrongPassword:
+      code: "4005"
+      msg: "비밀번호가 일치하지 않습니다."
+    sleep:
+      code: "4023"
+      msg: "휴면회원 입니다."
+    not-sleep:
+      code: "4007"
+      msg: "휴면회원이 아닙니다."
+    not-matched-cellphone:
+      code: "4008"
+      msg: "회원정보의 전화번호와 일치하지 않습니다."
+    invalid-password:
+      code: "4009"
+      msg: "사용 불가능한 비밀번호입니다."
+  unauthorized:
+    code: "401"
+    msg: 로그인 정보가 없습니다.
+  accessDenied:
+    code: "403"
+    msg: 접근 권한이 없습니다.
+  empty:
+    code: "500"
+    msg: 데이터가 없습니다.
+  jwt:
+    ExpiredJwtException:
+      code: "4011"
+      msg: 토큰 기한 만료
+    MalformedJwtException:
+      code: "4012"
+      msg: 잘못된 형식의 토큰
+    SignatureException:
+      code: "4013"
+      msg: 토큰 서명 오류
+    UnsupportedJwtException:
+      code: "4014"
+      msg: 일치하지 않는 형식의 토큰
+    IllegalArgumentException:
+      code: "4015"
+      msg: 토큰 오류
+  certification:
+    noCertification:
+      code: "4031"
+      msg: "인증번호를 다시 발송해 주세요."
+    noCertificationKey:
+      code: "4032"
+      msg: "인증에 실패하였습니다.[인증키 오류]"
+    expiredCertification:
+      code: "4033"
+      msg: "인증에 실패하였습니다.[인증시간 만료]"
+    noCertificationNumber:
+      code: "4034"
+      msg: "인증에 실패하였습니다.[인증번호 오류]"
+  sign-up:
+    exist-id:
+      code: "4041"
+      msg: "이미 사용중인 아이디입니다."
+    invalid-id:
+      code: "4042"
+      msg: "아이디는 6~12자의 영문, 숫자만 사용 가능합니다."
+    invalid-name:
+      code: "4043"
+      msg: "이름은 한글, 영어만 사용가능합니다."
+    invalid-age:
+      code: "4044"
+      msg: "만 14세 미만은 가입할 수 없습니다."
+    exist-user:
+      code: "4045"
+      msg: "이미 가입된 회원입니다. 아이디 찾기를 이용해주세요."
+    exist-cellphone:
+      code: "4046"
+      msg: "이미 가입된 번호입니다."
+    missing-value:
+      code: "4050"
+      msg: "필수값 누락"
+
+alarm:
+  STUDYALARM:
+    title: 스터디 알람
+    sub: "{0}"
+    contents: "오늘의 학습목표를 확인하고 학습을 시작해보세요."
+  STUDY_QNA:
+    title: 학습 Q&A 답변 도착
+    sub: "{0}"
+    contents: "Q&A 답변이 등록되었습니다."
+  PACKAGE_QNA:
+    title: 상품 Q&A 답변 도착
+    sub: "{0}"
+    contents: "Q&A 답변이 등록되었습니다."
+  CLASS_START:
+    ONLINE:
+      title: 클래스 시작
+      sub: "{0}"
+      contents: "클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    LECTURE_ONLY:
+      title: 클래스 시작
+      sub: "{0}"
+      contents: "클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    CLOSE_CARE:
+      title: 클래스 시작
+      sub: "{0}"
+      contents: "클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    FULL_CARE:
+      title: 클래스 시작
+      sub: "{0}"
+      contents: "클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    COMMUNITY:
+      title: 클래스 시작
+      sub: "{0}"
+      contents: "클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    B2B:
+      title: 클래스 시작
+      sub: "{0}"
+      contents: "클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+  MISSION:
+    title: 미션 도착
+    sub: "{0}"
+    contents: "{1} 님이 등록한 미션을 확인해보세요."
+  COMMUNITY:
+    title: 새로운 글 도착
+    sub: "{0}"
+    contents: "{1} 님이 등록한 커뮤니티 글을 확인해보세요."
+  COMMENT:
+    title: 새로운 댓글 도착
+    sub: "{0}"
+    contents: "{1} 님이 등록한 댓글을 확인해보세요."
+  CLASS_RESTART:
+    title: 일시정지 안내
+    sub: "{0} 일시정지가 종료"
+    contents: "마이페이지 일시정지 관리에서 확인할 수 있습니다."
+  CLASS_STOP:
+    title: 일시정지 안내
+    sub: "{0} 일시정지가 시작"
+    contents: "마이페이지 일시정지 관리에서 확인할 수 있습니다."
+  ABSENT_NOTICE:
+    title: 학습 안내
+    sub: "{0}"
+    contents: "{1} 님, 이번 주 한번도 야나두 수강을 안 하셨어요! 오늘은 미루지 말고 바로 학습하러 가볼까요?!"
+  COACH_REPORT:
+    title: Coach’s 리포트 도착
+    sub: "{0}"
+    contents: "{1} 학습 리포트가 도착했습니다."
+  REPLY_REVIEW:
+    title: 수강후기 답변 도착
+    sub: "{0}"
+    contents: "마이페이지 > 수강후기 관리에서 확인할 수 있습니다."
+  REPLY_PRODUCT_REVIEW:
+    title: 상품후기 답변 도착
+    sub: "{0}"
+    contents: "마이페이지 > 나의 문의 | 후기 에서 확인할 수 있습니다."
+  REPLY_INQUIRY:
+    title: 문의답변 도착
+    sub: 1:1문의답변 등록
+    contents: "마이페이지 > 1:1 문의에서 확인할 수 있습니다."
+  SERVICE:
+    title: "PUSH 알림"
+  MARKETING:
+    title: "PUSH 알림"
+
+push:
+  STUDY_QNA:
+    title: 학습 Q&A 답변 도착
+    contents: "{0} 클래스 Q&A 답변이 등록되었습니다."
+  PACKAGE_QNA:
+    title: 상품 Q&A 답변 도착
+    contents: "{0} Q&A 답변이 등록되었습니다."
+  CLASS_START:
+    ONLINE:
+      title: 클래스 시작
+      contents: "{0} 클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    LECTURE_ONLY:
+      title: 클래스 시작
+      contents: "{0} 클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    CLOSE_CARE:
+      title: 클래스 시작
+      contents: "{0} 클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+    FULL_CARE:
+      title: 클래스 시작
+      contents: "{0} 클래스가 자동 시작되었습니다. 학습을 진행해주세요."
+  MISSION:
+    title: 미션 도착
+    contents: "{0} 미션이 도착했습니다."
+  COMMUNITY:
+    title: 새로운 글 도착
+    contents: "{0} 커뮤니티 새로운 글이 도착했습니다."
+  COMMENT:
+    title: 새로운 댓글 도착
+    contents: "{0} 님이 댓글을 등록했습니다."
+  CLASS_RESTART:
+    title: 일시정지 종료
+    contents: "{0} 일시정지가 종료되었습니다."
+  CLASS_STOP:
+    title: 일시정지 시작
+    contents: "{0} 일시정지가 시작되었습니다."
+  ABSENT_NOTICE:
+    title: 7일 연속 미수강 안내
+    contents: "{0} 님, 이번 주 한번도 야나두 출석을 안 하셨어요! 오늘은 미루지 말고 바로 학습하러 가볼까요?!"
+  COACH_REPORT:
+    title: 학습 리포트 도착
+    contents: "{0} {1} 학습 리포트가 도착했습니다."
+  REPLY_REVIEW:
+    title: 수강후기 답글 등록
+    contents: "수강후기 답변이 등록되었습니다."
+  REPLY_PRODUCT_REVIEW:
+    title: 상품 후기 답글 등록
+    contents: "상품후기 답변이 등록되었습니다."
+  REPLY_INQUIRY:
+    title: 1대1 문의 답글 등록
+    contents: "1:1문의 답변이 등록되었습니다."
+
+device:
+  check:
+    success: 성공
+    error: 학습 가능한 기기대수를 초과하였습니다.
+    exceeded-device-count: "사용 가능한 기기 대수가 초과되었습니다. \n마이페이지 > 학습기기정보에서 확인해주세요."
+    exception: 오류가 발생했습니다.
+
+coupon:
+  emptyData: 쿠폰 발행 요청 건수가 없습니다.
+  noExist: 해당 쿠폰이 존재 하지 않습니다.
+  excessLimitCount: 쿠폰 발행 요청 개수가 쿠폰 발행 제한 개수를 초과하였습니다.
+  expiredType: 만료 타입이 잘못 설정되었습니다.
+  expiredDate: 쿠폰의 만료일이 지났습니다.
+  existCoupon: 이미 발행한 쿠폰이 존재 합니다. [{0}]
+  noExistUser: 해당 유저가 없습니다.
+  alreadyUse: 해당 쿠폰은 이미 사용되었습니다.
+  prePublishCoupon: 해당 쿠폰은 선지급 쿠폰 입니다.
+  afterPublishCoupon: 해당 쿠폰은 후지급 쿠폰 입니다.
+  ExceededPublishCount: 쿠폰 발행 1회당 요청 가능 건수를 초과했습니다.
+  valid-code: "등록 가능한 코드입니다."
+  invalid-code: "할인코드를 다시 확인해주세요."
+  overlap: 쿠폰코드가 중복되었습니다.
+  couponPublish:
+    noExistCouponCode: 해당 쿠폰코드로 발행된 쿠폰이 없습니다.
+    alreadyPublishUser: 해당 쿠폰코드는 이미 사용자가 등록되었습니다.
+    alreadyExist: 이미 해당 쿠폰으로 받은 쿠폰이 존재합니다.
+
+coopVoucher:
+  failPublish: 쿠폰 사용이 불가능합니다.
+  alreadyExistPackage: 이미 보유중인 상품입니다.
+  noExistPackage: 해당 상품이 존재 하지 않습니다.
+
+voucher:
+  emptyData: 수강권 발행 요청 건수가 없습니다.
+  noExist: 해당 수강권이 존재 하지 않습니다.
+  alreadyUse: 해당 수강권은 이미 사용하였습니다.
+  existVoucher: 이미 발행한 수강권이 존재 합니다. [{0}]
+  noExistUser: 해당 유저가 없습니다.
+  noExistVoucherPublish: 해당 수강권 발행 정보가 없습니다.
+  startDate: 수강권 등록시작일 이전입니다.
+  expiredDate: 수강권 만료일이 지났습니다.
+  alreadyExistPackage: 이미 수강한 이력이 존재 합니다.
+  nonUseVoucherPublish: 해당 수강권은 사용하지 않은 수강권 입니다.
+  alreadyCancel: 해당 수강권은 이미 취소처리 된 수강권 입니다.
+  existOrderSeq: 해당 수강권은 결제 이력이 존재합니다.
+  exceptionAddVoucherPublishCode: 주문에 수강권코드 등록 오류가 발생하였습니다.
+  differentVoucherPublishCode: 주문시 수강권 코드와 취소 요청 수강권 코드가 다릅니다.
+  notMatchUser: 수강권 사용 유저와 취소 요청 유저가 일치하지 않습니다.
+
+package:
+  wrongAdminSeq: 관리자 번호가 잘못 되었습니다.
+  wrongSortOrder: 상품 순서가 잘못 되었습니다.
+  noExistProduct: 해당 상품이 존재하지 않습니다.
+  tooManyScholarship: 장학금 상품이 2개 이상입니다.
+  customSaleException: 판매대상이 없습니다.
+  scholarship: 장학금 상품인데 환급 여부가 N으로 되어있습니다.
+  saleDate: 판매 시작/종료일이 잘못 되었습니다.
+  noSalePackage: 판매 상태의 상품이 아닙니다.
+  endSaleDateAfter: 판매가 종료된 상품입니다.
+  soldOutPackage: 매진되었습니다.
+  noExistManualPaymentPackages: 수기결제 상품이 아니거나 조회 결과가 없습니다.
+  alreadyExistPackage: 이미 보유중인 상품입니다.
+
+admin:
+  noExistAdminSeq: 1.0 관리자와 매핑된 2.0 관리자 번호가 존재하지 않습니다.
+
+package-provide:
+  error:
+    duplicated: 중복 지급
+    not-exist-id: 존재하지 않는 ID 또는 탈퇴한 회원
+
+file:
+  not-exist: 파일이 존재하지 않습니다.
+  image-only: 이미지 파일만 첨부할 수 있습니다.
+  not-allowed-file-type: 허용하지 않는 파일 형식입니다.
+  unableUploadFileType: 업로드 할 수 없는 확장자입니다. ({0})
+
+order:
+  noExistOrder: 주문이 존재하지 않습니다.
+  noExistProduct: 주문 이력에 해당 상품이 존재하지 않습니다.
+  alreadyPayment: 이미 구매한 이력이 존재합니다.
+  alreadyCancel: 이미 취소한 상품 입니다.
+  noExistCancel: 취소 이력이 존재하지 않습니다.
+
+gid:
+  noExistGid: 해당 상품에 맞는 GID가 존재 하지 않습니다.
+
+certification:
+  send:
+    noCellPhone: "등록된 휴대전화번호가 없습니다."
+    fail: "인증번호 발송을 실패했습니다."
+    success: "인증번호가 발송 되었습니다."
+    msgBody: "[야나두] 인증번호 [{0}]를 입력해 주세요."
+  check:
+    success: "인증에 성공하였습니다."
+
+question:
+  noExist: 문의 정보가 존재하지 않습니다.
+  noLecture: 해당 강의가 없습니다.
+  noLectureInClasses: 해당 클래스에 속한 강의가 아닙니다.
+  noLectureInSubject: 해당 과목에 속한 강의가 아닙니다.
+  alreadyAnswer: 답변이 완료된 질문은 수정할 수 없습니다.
+  noDelete:
+    noExist: 삭제 할 질문이 없습니다.
+  noExistPackage: 상품 정보가 존재하지 않습니다.
+  noExistClasses: 클래스 정보가 존재하지 않습니다.
+  noExistLecture: 강의 정보가 존재하지 않습니다.
+  notMatchUser: 작성 유저와 요청 유저가 일치하지 않습니다.
+  isEmptyContent: 문의 내용을 입력해주세요.
+  existReply:
+    update: 답변이 완료 된 문의글은 변경 할 수 없습니다.
+    delete: 답변이 완료 된 문의글은 삭제 할 수 없습니다.
+  deleteContent: 작성자에 의해 삭제된 문의입니다.
+
+answer:
+  noExist: 해당 답변이 없습니다.
+  alreadyAnswer: 이미 답변이 등록되어있습니다.
+
+inquiry:
+  noExist: 문의 정보가 존재하지 않습니다.
+  notMatchUser: 작성 유저와 요청 유저가 일치하지 않습니다.
+  isEmptyContent: 내용을 입력해 주십시오.
+  existReply:
+    update: 답변이 완료 된 문의글은 변경 할 수 없습니다.
+    delete: 답변이 완료 된 문의글은 삭제 할 수 없습니다.
+  answer:
+    noExist: 답변이 존재하지 않습니다.
+
+learningReview:
+  alreadyExist: 이미 등록 된 후기가 존재합니다.
+  noExist: 후기 정보가 존재하지 않습니다.
+  noExistStudyGroup: 수강정보가 존재하지 않습니다.
+  noExistClasses: 클래스 정보가 존재하지 않습니다.
+  noExistProduct: 상품 정보가 존재하지 않습니다.
+  notMatchUser: 작성 유저와 요청 유저가 일치하지 않습니다.
+  isEmptyContent: 후기 내용을 입력해주세요.
+  existReply:
+    update: 답변이 완료 된 후기는 변경 할 수 없습니다.
+    delete: 답변이 완료 된 후기는 삭제 할 수 없습니다.
+  wrongProductType: 상품후기는 배송상품 또는 앱이용권인 경우에만 등록 할 수 있습니다.
+  answer:
+    alreadyAnswer: 답변이 이미 존재합니다.
+    noExist: 답변이 존재하지 않습니다.
+
+studyGroup:
+  noExist: 수강정보가 존재하지 않습니다.
+  wrongPeriodCloseDate: 기존 수강종료일 이후로만 변경할 수 있습니다.
+  wrongFormatCloseDate: "종료일은 yyyy-MM-dd 형식으로 입력해 주세요."
+  noRunning: "수강 상태가 진행(시작) 일 경우에만 변경할 수 있습니다."
+
+studyDelete:
+  noExistUser: 회원 정보가 존재하지 않습니다.
+  noExistPackageSeq: 해당 상품번호로 수강 정보가 존재하지 않습니다.
+  noExistStudyGroupSeq: 해당 수강 번호의 수강 정보가 존재하지 않습니다.
+  existBuy: 해당 상품번호의 구매 이력이 존재 합니다.
+  existVoucher: 해당 상품번호의 수강권 등록 이력이 존재 합니다.
+
+packageExtend:
+  success: "평생수강 연장이 완료되었습니다."
+  alreadyExist: "이미 평생수강 연장이 완료되었습니다."
+  unavailable: "상품 연장이 불가능한 상태입니다."
+
+community:
+  bannedWord: 내용에 금지단어({0})가 포함되어 있습니다.
+  notExist: 커뮤니티 정보가 존재하지 않습니다.
+  notActive: 사용 가능한 커뮤니티가 아닙니다.
+  notPermitted: "커뮤니티 사용권한이 없습니다.\n자세한 내용은 관리자에게 문의해 주세요."
+  post:
+    notExist: 게시글이 존재하지 않습니다.
+    notPermitted: 게시글 작성 권한이 없습니다.
+    notRegistUser: 게시글 작성자가 아닙니다.
+    deleted: 삭제된 게시글 입니다.
+    blind: 숨김처리된 게시글 입니다.
+  attachment:
+    notPathUrl: 첨부파일 주소가 없습니다.
+    notPassLinkUrl: 링크 주소가 잘못되었습니다.
+
+event:
+  noExist: 이벤트 정보가 존재하지 않습니다.
+  noExistWinnerManage: 당첨자발표 정보가 존재하지 않습니다.
+  notProgress: 이벤트 진행 기간이 아닙니다.
+  notCommentType: 댓글 이벤트가 아닙니다.
+  notBoardType: 작성 이벤트가 아닙니다.
+  commentFail: 댓글 등록을 실패했습니다.
+  notWinner: 당첨자가 아닙니다.
+  expiredCollectionDate: 당첨 정보 입력 기한이 마감되었습니다.
+  notApplicableAnonymousUser: 비회원 참여 불가 이벤트 입니다.
+  notUsedCollection: 추가 정보를 수집하지 않는 이벤트 입니다.
+  isEmptyComment: 댓글을 입력해주세요.
+  isEmptyContent: 내용을 입력해주세요.
+  isEmptyDetailAddress: 상세주소를 입력해주세요.
+  isEmptyRecipient: 이름을 입력해주세요.
+
+learningHistory:
+  noExistStudyGroupToUser: 유저의 수강정보가 존재하지 않습니다.
+
+cart:
+  cantAdd:
+    entrancedUser: "입학 중인 회원은 입학 상품을 구입할 수 없습니다."
+    hasEntrancePackage: "장바구니의 상품을 먼저 결제해주세요."
+    directOrder: "바로 구매하기로 구매할 수 없는 상품입니다."
+    withoutPresentProduct: "입학 축하 상품 정보가 없습니다."
+  cantDelete:
+    needEntrancePackage: "심화과정만 단독으로 구매할 수 없습니다."
+
+yafit:
+  partner-gym:
+    voucher-sold-out: "이용권이 모두 소진되었습니다."

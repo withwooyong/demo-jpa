@@ -1,15 +1,34 @@
 package com.example.demo.entity.test;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
 @Getter
-@Setter
-@SuperBuilder
-@NoArgsConstructor
 public class Parent {
-    private String a;
-    private String b;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    // mappedBy 추가
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Child> children = new ArrayList<>();
+
+    protected Parent() {
+    }
+
+    public Parent(String name) {
+        this.name = name;
+    }
+
+    public Parent(String name, List<Child> children) {
+        this.name = name;
+        this.children.addAll(children);
+    }
 }

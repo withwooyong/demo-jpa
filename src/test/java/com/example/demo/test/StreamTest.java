@@ -1,8 +1,8 @@
 package com.example.demo.test;
 
-import com.example.demo.entity.test.CartItemResponse;
-import com.example.demo.entity.test.YndCouponParamVO;
-import com.example.demo.entity.test.YndOrderMasterVO;
+import com.example.demo.dto.test.CartItemResponse;
+import com.example.demo.dto.test.YndCouponParamVO;
+import com.example.demo.dto.test.YndOrderMasterVO;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

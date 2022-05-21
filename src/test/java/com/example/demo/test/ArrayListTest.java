@@ -1,8 +1,13 @@
 package com.example.demo.test;
 
-import com.example.demo.entity.test.Item;
+import com.example.demo.dto.test.Item;
+import com.example.demo.dto.test.PaymentRequest;
+import com.example.demo.dto.test.YndCouponParamVO;
+import com.example.demo.dto.test.YndOrderDetailVO;
+import com.example.demo.dto.test.YndOrderProductVO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -92,6 +97,79 @@ public class ArrayListTest {
     void forEachNullTest() {
         List<Item> itemList = new ArrayList<>();
         itemList.forEach(System.out::println);
+    }
+
+    @Test
+    void addAllTest() {
+        YndCouponParamVO yndCouponParamVO1 = YndCouponParamVO.builder().couponCode("couponCode1").build();
+        YndCouponParamVO yndCouponParamVO2 = YndCouponParamVO.builder().couponCode("couponCode2").build();
+
+        List<YndCouponParamVO> yndCouponParamVOList = new ArrayList<>();
+        yndCouponParamVOList.add(yndCouponParamVO1);
+        yndCouponParamVOList.add(yndCouponParamVO2);
+        System.out.println("yndCouponParamVOList=" + yndCouponParamVOList);
+
+        PaymentRequest paymentRequest = PaymentRequest.builder()
+                .deviceType("test")
+                .couponRequests(yndCouponParamVOList)
+                .build();
+
+        List<YndCouponParamVO> yndCouponParamVOList2 = new ArrayList<>();
+        if (paymentRequest.getCouponRequests() != null) {   // 쿠폰있으면
+//            yndCouponParamVOList2 = paymentRequest.getCouponRequests();
+            yndCouponParamVOList2.addAll(yndCouponParamVOList);
+        }
+        System.out.println("yndCouponParamVOList2=" + yndCouponParamVOList2);
+    }
+
+    @Getter
+    @AllArgsConstructor
+    public enum ProductTypeEnum {
+        CLASS("CLASS", "클래스"),
+        REAL("REAL", "현물"),
+        APP("APP", "앱이용권"),
+        RANDOM("RANDOM", "임의상품"),
+        DELIVERY("DELIVERY", "배송비");
+
+        private String code;
+        private String value;
+    }
+
+    private int getTotalReal(List<YndOrderDetailVO> yndOrderDetailVOList, List<YndOrderProductVO> yndOrderProductVOList, int packageSeq) {
+
+        int totalReal = 0;
+        for (YndOrderDetailVO yndOrderDetailVO : yndOrderDetailVOList) {
+            if (packageSeq == yndOrderDetailVO.getPackageSeq()) {
+                for (YndOrderProductVO yndOrderProductVO : yndOrderProductVOList) {
+                    if (yndOrderProductVO.getProductSeq() == yndOrderDetailVO.getProductSeq()
+                            && yndOrderProductVO.getProductTypeCode().equals(ProductTypeEnum.REAL.getCode())) {
+                        totalReal += yndOrderProductVO.getMembershipSalePrice();
+                        yndOrderDetailVO.setPaymentPrice(yndOrderProductVO.getMembershipSalePrice());
+                        yndOrderDetailVO.setDiscountYn("N");
+                    }
+                }
+            }
+        }
+        return totalReal;
+    }
+
+    @Test
+    @DisplayName("setPaymentPrice setDiscountYn 값 저장 되는지 확인 ")
+    void getTotalRealTest() {
+        List<YndOrderDetailVO> yndOrderDetailVOList = new ArrayList<>();
+        yndOrderDetailVOList.add(YndOrderDetailVO.builder().packageSeq(1).productSeq(1).build());
+//        yndOrderDetailVOList.add(YndOrderDetailVO.builder().packageSeq(1).productSeq(1).build());
+//        yndOrderDetailVOList.add(YndOrderDetailVO.builder().packageSeq(1).productSeq(1).build());
+
+        List<YndOrderProductVO> yndOrderProductVOList = new ArrayList<>();
+        yndOrderProductVOList.add(YndOrderProductVO.builder().packageSeq(1).productSeq(1).productTypeCode(ProductTypeEnum.REAL.getCode()).membershipSalePrice(1000).build());
+        yndOrderProductVOList.add(YndOrderProductVO.builder().packageSeq(1).productSeq(1).productTypeCode(ProductTypeEnum.REAL.getCode()).membershipSalePrice(2000).build());
+        yndOrderProductVOList.add(YndOrderProductVO.builder().packageSeq(1).productSeq(1).productTypeCode(ProductTypeEnum.REAL.getCode()).membershipSalePrice(3000).build());
+
+        int totalReal = getTotalReal(yndOrderDetailVOList, yndOrderProductVOList, 1);
+        System.out.println(totalReal);
+        System.out.println(yndOrderDetailVOList); // setPaymentPrice setDiscountYn 값 저장 되는지 확인
+
     }
 
 

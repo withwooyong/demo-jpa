@@ -1,7 +1,7 @@
 package com.example.demo.test;
 
-import com.example.demo.entity.test.YndDTO;
-import com.example.demo.entity.test.YndOrderParamVO;
+import com.example.demo.dto.test.YndDTO;
+import com.example.demo.dto.test.YndOrderParamVO;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -24,14 +24,17 @@ class JpaTest {
     @BeforeEach
     void setUp() {
         for (int i = 0; i < 10; i++) {
-            Parent parent = new Parent("father" + String.valueOf(i));
+            Parent parent = new Parent("a" + String.valueOf(i));
+
+
             Set<Child> childSet = new LinkedHashSet<Child>();
             childSet.add(new Child("Ted" + String.valueOf(i), parent));
             childSet.add(new Child("andy" + String.valueOf(i), parent));
-            parent.addAllChild(childSet);
+
             var result = parentRepository.save(parent);
 //            System.out.println(result.toString());
         }
+
     }
 
     @Test
@@ -63,22 +66,22 @@ class JpaTest {
 //    @Transactional
 //    @Rollback(false)
     public void oneToManyTest() throws Exception {
-        Parent parent = new Parent("father");
-        Set<Child> children = new LinkedHashSet<>();
-
-        children.add(new Child("james", parent));
-        children.add(new Child("tomas", parent));
-//        parent.setChildren(children);
-        parent.addAllChild(children);
-
-        Parent dbParent = parentRepository.save(parent);
-        System.out.println("### 0 " + dbParent.toString());
-        var result = dbParent.getChild().removeIf(child -> child.getName().equalsIgnoreCase("james"));
-        System.out.println(result);
-        var result2 = parentRepository.findAll();
-        result2.forEach(System.out::println);
-//        System.out.println("### 1 " + parentRepository.findAll());
-        parentRepository.deleteAll();
-//        System.out.println("### 2 " + parentRepository.findAll());
+//        Parent parent = new Parent("father");
+//        Set<Child> children = new LinkedHashSet<>();
+//
+//        children.add(new Child("james", parent));
+//        children.add(new Child("tomas", parent));
+////        parent.setChildren(children);
+//        parent.addAllChild(children);
+//
+//        Parent dbParent = parentRepository.save(parent);
+//        System.out.println("### 0 " + dbParent.toString());
+//        var result = dbParent.getChild().removeIf(child -> child.getName().equalsIgnoreCase("james"));
+//        System.out.println(result);
+//        var result2 = parentRepository.findAll();
+//        result2.forEach(System.out::println);
+////        System.out.println("### 1 " + parentRepository.findAll());
+//        parentRepository.deleteAll();
+////        System.out.println("### 2 " + parentRepository.findAll());
     }
 }

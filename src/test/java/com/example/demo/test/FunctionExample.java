@@ -1,6 +1,6 @@
 package com.example.demo.test;
 
-import com.example.demo.entity.test.Student;
+import com.example.demo.dto.test.Student;
 
 import java.util.Arrays;
 import java.util.List;

@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @ToString(exclude = {"customer", "searchCustomerName", "searchOrderStatus", "itemList"})
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 @NoArgsConstructor
 public class Order {
 

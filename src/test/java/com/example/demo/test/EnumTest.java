@@ -25,9 +25,9 @@ public class EnumTest {
         PAYCO("PAYCO", "페이코", ""),
         KAKAO("KAKAO", "카카오페이", "");
 
-        private String code;
-        private String value;
-        private String naver;
+        private final String code;
+        private final String value;
+        private final String naver;
     }
 
     @Test
@@ -39,6 +39,8 @@ public class EnumTest {
         boolean checkTrue = Arrays.asList(PaymentTypeEnum.CARD, PaymentTypeEnum.ACCOUNT, PaymentTypeEnum.REMITTANCE)
                 .contains(check);
         System.out.println(checkTrue);
+
+        System.out.println(PaymentTypeEnum.valueOf("CARD").getValue());
     }
 
     @Test

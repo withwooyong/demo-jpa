@@ -1,6 +1,9 @@
-package com.example.demo.dto.test;
+package com.example.demo.test;
 
-import com.study.querydsl.entity.PackagesV2;
+
+import com.example.demo.dto.test.CartItem;
+import com.example.demo.dto.test.OrderItemRequest;
+import com.example.demo.entity.test.PackagesV2;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

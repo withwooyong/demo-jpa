@@ -1,16 +1,31 @@
 package com.example.demo.entity.test;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
+import javax.persistence.*;
+
+@Entity
 @Getter
-@Setter
-@SuperBuilder
-@NoArgsConstructor
-public class Child extends Parent {
+public class Child {
 
-    private String c;
-    private String d;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    // Parent 필드 추가
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
+    private Parent parent;
+
+
+    protected Child() {
+    }
+
+    // 생성자에 Parent 추가
+    public Child(String name, Parent parent) {
+        this.name = name;
+        this.parent = parent;
+    }
 }
