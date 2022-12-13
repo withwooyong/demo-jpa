@@ -1,0 +1,55 @@
+package com.example.demo.test;
+
+import com.example.demo.dto.test.OrderItemRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
+public class PrettyPrintJson {
+
+
+    @Test
+    @DisplayName("GSON")
+    void gsonTest() {
+        final String jsonStr = "[{\"cartSeq\":35775,\"cartType\":null,\"packageTypeCode\":\"COURSE\",\"packageSeq\":843,\"packageName\":\"[패키지] 인스타부터 스마트스토어까지! 퇴근 후 월 200만원 벌기\",\"freeYn\":\"N\",\"originalPrice\":1159000,\"salePrice\":1159000,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":null,\"sortOrder\":0,\"productItems\":[{\"cartSeq\":35776,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"돈 되는 인스타 공동구매 시작하기\",\"freeYn\":\"N\",\"originalPrice\":399000,\"salePrice\":102934,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":588,\"sortOrder\":1,\"productItems\":null},{\"cartSeq\":35777,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"바로 써먹는 구매대행 노하우\",\"freeYn\":\"N\",\"originalPrice\":418000,\"salePrice\":107836,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":605,\"sortOrder\":2,\"productItems\":null},{\"cartSeq\":35778,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"예비CEO를 위한 실전 창업브랜딩\",\"freeYn\":\"N\",\"originalPrice\":342000,\"salePrice\":88230,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":585,\"sortOrder\":3,\"productItems\":null}]},{\"cartSeq\":35821,\"cartType\":null,\"packageTypeCode\":\"ENTRANCE\",\"packageSeq\":1884,\"packageName\":\"Yanadoo University 입학\",\"freeYn\":\"N\",\"originalPrice\":1981000,\"salePrice\":168000,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":null,\"sortOrder\":0,\"productItems\":[{\"cartSeq\":35822,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"성공을 향한 마인드셋\",\"freeYn\":\"N\",\"originalPrice\":0,\"salePrice\":0,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":729,\"sortOrder\":1,\"productItems\":null},{\"cartSeq\":35823,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"하루 10분 영어 습관 만들기\",\"freeYn\":\"N\",\"originalPrice\":776000,\"salePrice\":12630,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":730,\"sortOrder\":2,\"productItems\":null},{\"cartSeq\":35824,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"경제적 자유를 위한 하루 10분 투자\",\"freeYn\":\"N\",\"originalPrice\":513000,\"salePrice\":8350,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":744,\"sortOrder\":3,\"productItems\":null},{\"cartSeq\":35825,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"하루 10분 운동 습관 만들기\",\"freeYn\":\"N\",\"originalPrice\":554000,\"salePrice\":9020,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":732,\"sortOrder\":4,\"productItems\":null},{\"cartSeq\":35969,\"cartType\":null,\"packageTypeCode\":\"REAL\",\"packageSeq\":1884,\"packageName\":\"[굿즈] 카카오 스마트가습기\",\"freeYn\":\"N\",\"originalPrice\":69000,\"salePrice\":69000,\"cnt\":1,\"requiredYn\":\"N\",\"productSeq\":822,\"sortOrder\":5,\"productItems\":null},{\"cartSeq\":35826,\"cartType\":null,\"packageTypeCode\":\"REAL\",\"packageSeq\":1884,\"packageName\":\"[굿즈] 카카오 스마트램프\",\"freeYn\":\"N\",\"originalPrice\":69000,\"salePrice\":69000,\"cnt\":1,\"requiredYn\":\"N\",\"productSeq\":823,\"sortOrder\":5,\"productItems\":null}]}]";
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jp = new JsonParser();
+        JsonElement je = jp.parse(jsonStr);
+        String prettyJsonString = gson.toJson(je);
+        System.out.println(prettyJsonString);
+
+        Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
+        String jsonOutput = gson2.toJson(jsonStr);
+        System.out.println(jsonOutput); // 안됨.
+
+        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(new JsonParser().parse(jsonStr)));
+    }
+
+//    @Test
+//    @DisplayName("org.json 내장 메소드")
+//    void orgJsonTest() throws JSONException {
+//        final String jsonStr = "[{\"cartSeq\":35775,\"cartType\":null,\"packageTypeCode\":\"COURSE\",\"packageSeq\":843,\"packageName\":\"[패키지] 인스타부터 스마트스토어까지! 퇴근 후 월 200만원 벌기\",\"freeYn\":\"N\",\"originalPrice\":1159000,\"salePrice\":1159000,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":null,\"sortOrder\":0,\"productItems\":[{\"cartSeq\":35776,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"돈 되는 인스타 공동구매 시작하기\",\"freeYn\":\"N\",\"originalPrice\":399000,\"salePrice\":102934,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":588,\"sortOrder\":1,\"productItems\":null},{\"cartSeq\":35777,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"바로 써먹는 구매대행 노하우\",\"freeYn\":\"N\",\"originalPrice\":418000,\"salePrice\":107836,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":605,\"sortOrder\":2,\"productItems\":null},{\"cartSeq\":35778,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"예비CEO를 위한 실전 창업브랜딩\",\"freeYn\":\"N\",\"originalPrice\":342000,\"salePrice\":88230,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":585,\"sortOrder\":3,\"productItems\":null}]},{\"cartSeq\":35821,\"cartType\":null,\"packageTypeCode\":\"ENTRANCE\",\"packageSeq\":1884,\"packageName\":\"Yanadoo University 입학\",\"freeYn\":\"N\",\"originalPrice\":1981000,\"salePrice\":168000,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":null,\"sortOrder\":0,\"productItems\":[{\"cartSeq\":35822,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"성공을 향한 마인드셋\",\"freeYn\":\"N\",\"originalPrice\":0,\"salePrice\":0,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":729,\"sortOrder\":1,\"productItems\":null},{\"cartSeq\":35823,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"하루 10분 영어 습관 만들기\",\"freeYn\":\"N\",\"originalPrice\":776000,\"salePrice\":12630,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":730,\"sortOrder\":2,\"productItems\":null},{\"cartSeq\":35824,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"경제적 자유를 위한 하루 10분 투자\",\"freeYn\":\"N\",\"originalPrice\":513000,\"salePrice\":8350,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":744,\"sortOrder\":3,\"productItems\":null},{\"cartSeq\":35825,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"하루 10분 운동 습관 만들기\",\"freeYn\":\"N\",\"originalPrice\":554000,\"salePrice\":9020,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":732,\"sortOrder\":4,\"productItems\":null},{\"cartSeq\":35969,\"cartType\":null,\"packageTypeCode\":\"REAL\",\"packageSeq\":1884,\"packageName\":\"[굿즈] 카카오 스마트가습기\",\"freeYn\":\"N\",\"originalPrice\":69000,\"salePrice\":69000,\"cnt\":1,\"requiredYn\":\"N\",\"productSeq\":822,\"sortOrder\":5,\"productItems\":null},{\"cartSeq\":35826,\"cartType\":null,\"packageTypeCode\":\"REAL\",\"packageSeq\":1884,\"packageName\":\"[굿즈] 카카오 스마트램프\",\"freeYn\":\"N\",\"originalPrice\":69000,\"salePrice\":69000,\"cnt\":1,\"requiredYn\":\"N\",\"productSeq\":823,\"sortOrder\":5,\"productItems\":null}]}]";
+//        JSONObject json = new JSONObject(jsonStr);
+//        System.out.println(json.toString(4)); // Print it with specified indentation
+//    }
+
+    @Test
+    @DisplayName("com.fasterxml.jackson.databind...")
+    void jacksonTest() throws JsonProcessingException {
+        final String jsonStr = "[{\"cartSeq\":35775,\"cartType\":null,\"packageTypeCode\":\"COURSE\",\"packageSeq\":843,\"packageName\":\"[패키지] 인스타부터 스마트스토어까지! 퇴근 후 월 200만원 벌기\",\"freeYn\":\"N\",\"originalPrice\":1159000,\"salePrice\":1159000,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":null,\"sortOrder\":0,\"productItems\":[{\"cartSeq\":35776,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"돈 되는 인스타 공동구매 시작하기\",\"freeYn\":\"N\",\"originalPrice\":399000,\"salePrice\":102934,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":588,\"sortOrder\":1,\"productItems\":null},{\"cartSeq\":35777,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"바로 써먹는 구매대행 노하우\",\"freeYn\":\"N\",\"originalPrice\":418000,\"salePrice\":107836,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":605,\"sortOrder\":2,\"productItems\":null},{\"cartSeq\":35778,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":843,\"packageName\":\"예비CEO를 위한 실전 창업브랜딩\",\"freeYn\":\"N\",\"originalPrice\":342000,\"salePrice\":88230,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":585,\"sortOrder\":3,\"productItems\":null}]},{\"cartSeq\":35821,\"cartType\":null,\"packageTypeCode\":\"ENTRANCE\",\"packageSeq\":1884,\"packageName\":\"Yanadoo University 입학\",\"freeYn\":\"N\",\"originalPrice\":1981000,\"salePrice\":168000,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":null,\"sortOrder\":0,\"productItems\":[{\"cartSeq\":35822,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"성공을 향한 마인드셋\",\"freeYn\":\"N\",\"originalPrice\":0,\"salePrice\":0,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":729,\"sortOrder\":1,\"productItems\":null},{\"cartSeq\":35823,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"하루 10분 영어 습관 만들기\",\"freeYn\":\"N\",\"originalPrice\":776000,\"salePrice\":12630,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":730,\"sortOrder\":2,\"productItems\":null},{\"cartSeq\":35824,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"경제적 자유를 위한 하루 10분 투자\",\"freeYn\":\"N\",\"originalPrice\":513000,\"salePrice\":8350,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":744,\"sortOrder\":3,\"productItems\":null},{\"cartSeq\":35825,\"cartType\":null,\"packageTypeCode\":\"CLASS\",\"packageSeq\":1884,\"packageName\":\"하루 10분 운동 습관 만들기\",\"freeYn\":\"N\",\"originalPrice\":554000,\"salePrice\":9020,\"cnt\":1,\"requiredYn\":\"Y\",\"productSeq\":732,\"sortOrder\":4,\"productItems\":null},{\"cartSeq\":35969,\"cartType\":null,\"packageTypeCode\":\"REAL\",\"packageSeq\":1884,\"packageName\":\"[굿즈] 카카오 스마트가습기\",\"freeYn\":\"N\",\"originalPrice\":69000,\"salePrice\":69000,\"cnt\":1,\"requiredYn\":\"N\",\"productSeq\":822,\"sortOrder\":5,\"productItems\":null},{\"cartSeq\":35826,\"cartType\":null,\"packageTypeCode\":\"REAL\",\"packageSeq\":1884,\"packageName\":\"[굿즈] 카카오 스마트램프\",\"freeYn\":\"N\",\"originalPrice\":69000,\"salePrice\":69000,\"cnt\":1,\"requiredYn\":\"N\",\"productSeq\":823,\"sortOrder\":5,\"productItems\":null}]}]";
+        ObjectMapper objectMapper = new ObjectMapper();
+        OrderItemRequest[] orderItemRequest1 = objectMapper.readValue(jsonStr, OrderItemRequest[].class);
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonStr)); // 안됨.
+        System.out.println(Arrays.toString(orderItemRequest1));
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderItemRequest1));
+    }
+
+
+}
