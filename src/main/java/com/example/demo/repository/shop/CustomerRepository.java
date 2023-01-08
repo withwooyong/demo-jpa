@@ -1,10 +1,10 @@
 package com.example.demo.repository.shop;
 
 import com.example.demo.entity.shop.Customer;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 //public interface CustomerRepository extends JpaRepository<Customer, Long> {

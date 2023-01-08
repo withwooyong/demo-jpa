@@ -1,18 +1,23 @@
 package com.example.demo.entity.test;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.uuid.Generators;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.UUID;
 
-@Entity
 @Getter
-@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
 public class Hello {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @Builder.Default
+    private UUID id = Generators.timeBasedGenerator().generate();
+
+    private String name;
 }

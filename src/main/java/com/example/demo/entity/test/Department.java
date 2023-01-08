@@ -1,9 +1,9 @@
 package com.example.demo.entity.test;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 

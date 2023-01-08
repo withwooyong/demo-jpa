@@ -1,11 +1,10 @@
 package com.example.demo.entity.shop;
 
+import jakarta.persistence.Embeddable;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
-import javax.persistence.Embeddable;
 
 @Getter
 @ToString

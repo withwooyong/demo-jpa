@@ -1,8 +1,7 @@
 package com.example.demo.entity.shop;
 
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 @Getter
 @ToString(exclude = {"order", "product"})

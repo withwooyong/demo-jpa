@@ -1,9 +1,8 @@
 package com.example.demo.entity.test;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
-
-import javax.persistence.*;
 
 @Getter
 @ToString
