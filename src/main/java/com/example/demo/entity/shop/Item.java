@@ -1,6 +1,7 @@
 package com.example.demo.entity.shop;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.*;
 
 @Getter

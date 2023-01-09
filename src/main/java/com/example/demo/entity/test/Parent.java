@@ -1,6 +1,7 @@
 package com.example.demo.entity.test;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -19,16 +20,4 @@ public class Parent {
     // mappedBy 추가
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Child> children = new ArrayList<>();
-
-    protected Parent() {
-    }
-
-    public Parent(String name) {
-        this.name = name;
-    }
-
-    public Parent(String name, List<Child> children) {
-        this.name = name;
-        this.children.addAll(children);
-    }
 }

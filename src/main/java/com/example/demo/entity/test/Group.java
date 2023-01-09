@@ -1,6 +1,7 @@
 package com.example.demo.entity.test;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.ToString;
 
@@ -14,7 +15,6 @@ import java.util.List;
 public class Group {
 
     @Id
-    @Column(name = "G_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

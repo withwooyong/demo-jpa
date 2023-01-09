@@ -1,16 +1,11 @@
 package com.example.demo.entity;
 
-import com.example.demo.entity.test.Child;
-import com.example.demo.entity.test.Parent;
 import com.example.demo.repository.ChildRepository;
 import com.example.demo.repository.ParentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @DataJpaTest
 class JpaTest {
@@ -23,17 +18,17 @@ class JpaTest {
 
     @BeforeEach
     void setUp() {
-        for (int i = 0; i < 10; i++) {
-            Parent parent = new Parent("a" + String.valueOf(i));
-
-
-            Set<Child> childSet = new LinkedHashSet<Child>();
-            childSet.add(new Child("Ted" + String.valueOf(i), parent));
-            childSet.add(new Child("andy" + String.valueOf(i), parent));
-
-            var result = parentRepository.save(parent);
-//            System.out.println(result.toString());
-        }
+//        for (int i = 0; i < 10; i++) {
+//            Parent parent = new Parent("a" + String.valueOf(i));
+//
+//
+//            Set<Child> childSet = new LinkedHashSet<Child>();
+//            childSet.add(new Child("Ted" + String.valueOf(i), parent));
+//            childSet.add(new Child("andy" + String.valueOf(i), parent));
+//
+//            var result = parentRepository.save(parent);
+////            System.out.println(result.toString());
+//        }
 
     }
 

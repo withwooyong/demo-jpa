@@ -16,12 +16,12 @@ import java.util.UUID;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Hello {
+public class Temp1 {
 
     @Id
     @Column(columnDefinition = "BINARY(16)")
     @Builder.Default
     private UUID id = Generators.timeBasedGenerator().generate();
-
     private String name;
+    private int age;
 }

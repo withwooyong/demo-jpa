@@ -24,6 +24,4 @@ public class ChildQueryRepository {
 //        return queryFactory.selectFrom(qAcPurchase)
 //                .fetch();
 //    }
-
-
 }

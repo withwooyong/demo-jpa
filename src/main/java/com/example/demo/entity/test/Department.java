@@ -1,6 +1,7 @@
 package com.example.demo.entity.test;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

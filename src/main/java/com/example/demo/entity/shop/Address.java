@@ -1,6 +1,7 @@
 package com.example.demo.entity.shop;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

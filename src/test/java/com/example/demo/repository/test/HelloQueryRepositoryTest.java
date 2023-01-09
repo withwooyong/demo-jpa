@@ -1,7 +1,9 @@
 package com.example.demo.repository.test;
 
 import com.example.demo.entity.test.Hello;
-import jakarta.persistence.EntityManager;
+
+import javax.persistence.EntityManager;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

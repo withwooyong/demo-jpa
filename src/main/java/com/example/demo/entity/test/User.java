@@ -1,6 +1,7 @@
 package com.example.demo.entity.test;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.Getter;
 import lombok.ToString;
 
@@ -10,9 +11,10 @@ import lombok.ToString;
 public class User {
 
     @Id
-    @Column(name = "U_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "G_ID")
