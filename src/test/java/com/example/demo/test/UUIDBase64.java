@@ -3,10 +3,9 @@ package com.example.demo.test;
 import java.nio.ByteBuffer;
 import java.util.Base64;
 import java.util.UUID;
-import java.util.stream.IntStream;
 
 // https://sakthipriyan.com/2017/04/02/creating-base64-uuid-in-java.html
-public class Base64Uuid {
+public class UUIDBase64 {
 
     public static String randomId() {
         // Create random UUID
@@ -23,8 +22,9 @@ public class Base64Uuid {
     }
 
     public static void main(String[] args) {
-        IntStream.rangeClosed(1, 100).forEach(value -> {
-            System.out.println(randomId()); // 22 자리
-        });
+//        IntStream.rangeClosed(1, 100).forEach(value -> {
+//            System.out.println(randomId()); // 22 자리
+//        });
+        System.out.println(System.nanoTime());
     }
 }
